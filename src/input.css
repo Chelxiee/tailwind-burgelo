@@ -1,0 +1,638 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com");
+
+@theme {
+  --color-primary: #ffa700;
+  --color-black: #00000067;
+  --color-white: #ffffff;
+  --color-lightgrey: #F7F6F9;
+  --font-display: "Oswald", sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+@layer components {
+  .header {
+    @apply fixed top-0 left-0 w-full
+           px-6 py-6
+           bg-white
+           z-[999]
+           shadow-[var(--shadow-soft)];
+  }
+
+  .header__wrapper {
+    @apply flex items-center justify-between;
+  }
+
+  .branding h3 {
+    @apply hidden;
+  }
+
+  .header__nav {
+    @apply absolute
+           top-[10rem]
+           right-[-100%]
+           w-full
+           h-[calc(110vh-103px)]
+           bg-black
+           transition-all
+           duration-300
+           ease-[var(--ease-qck)];
+  }
+
+  .header__nav.open {
+    @apply right-0;
+  }
+
+  .header__nav ul {
+    @apply flex flex-col
+           gap-12
+           pt-40
+           text-center;
+  }
+
+  .header__nav ul li a {
+    @apply text-[1.5rem]
+           text-white
+           tracking-wide
+           transition-colors
+           duration-200
+           /* hover:text-primary; */
+  }
+
+
+  .burgir {
+    @apply p-3
+           bg-primary
+           rounded-xl
+           cursor-pointer
+           transition-all
+           duration-200
+           ease-[var(--ease-simple)];
+  }
+
+  .burgir span {
+    @apply block
+           w-10
+           h-[0.35rem]
+           bg-white
+           rounded-full
+           transition-all
+           duration-200;
+  }
+
+  .burgir span:nth-child(2) {
+    @apply my-2;
+  }
+
+  .burgir.open {
+    @apply bg-transparent;
+  }
+
+  .burgir.open span {
+    @apply w-8
+           h-[0.3rem]
+           bg-black;
+  }
+
+  .burgir.open span:first-child {
+    @apply translate-y-[8px]
+           rotate-[225deg];
+  }
+
+  .burgir.open span:nth-child(2) {
+    @apply opacity-0;
+  }
+
+  .burgir.open span:last-child {
+    @apply -translate-y-[8px]
+           -rotate-[225deg];
+  }
+
+  .banner {
+  @apply p-0 pt-28;
+}
+
+
+.banner .container {
+  background-image: url("../img/banner.webp");
+  @apply h-[500px] bg-cover bg-no-repeat bg-center
+         flex items-center p-4
+         md:h-full md:p-40;
+}
+.banner .banner_wrapper{
+
+}
+
+.banner .banner__wrapper img {
+  @apply w-[18rem] pt-4;
+
+}
+
+
+.banner__text {
+  @apply flex flex-col w-fit max-w-[30rem]
+         text-white p-0
+         md:translate-x-32 md:-translate-y-28;
+}
+
+
+.banner__text h2 {
+  @apply text-[3rem] tracking-[0.5rem] font-[600] ;
+}
+
+
+.banner__text p {
+  @apply leading-[1.5] pr-17;
+}
+
+
+.banner__text a {
+  @apply w-[18rem] text-sm tracking-[0.2rem] mt-8
+         transition 
+        /* .hover\:text-\[color\:var\(--color-primary\)\]
+         hover:bg-white; */
+}
+
+.banner__text a.btn.bg--primary{
+    @apply bg-primary rounded-3xl w-[12rem] h-[2.5rem] text-center pt-2;
+}
+
+.menu .container {
+    @apply p-0;
+  }
+
+
+  .menu__summary__card {
+    @apply flex flex-col justify-start py-10;
+  }
+
+  .menu__summary__card .card__text {
+    @apply flex flex-col gap-12;
+  }
+
+  .menu__summary__card .price {
+    @apply flex flex-row items-end;
+  }
+
+  .menu__summary__card .price h3 {
+    @apply font-[380] tracking-[0.2rem];
+  }
+
+  .menu__summary__card .price .yellow,
+  .menu__summary__card .price h1 {
+    @apply text-primary font-[400];
+  }
+
+  .menu__summary__card .price h1 {
+    @apply text-[3rem] ml-[0.6rem] translate-y-[0.7rem];
+  }
+
+  .menu__summary__card .price .yellow{
+     @apply text-[1.3rem];
+  }
+
+  .menu__summary__card .food-name {
+    @apply flex flex-col gap-[3px];
+  }
+
+  .menu__summary__card .food-name h2,
+  .menu__summary__card .food-name h1 {
+    @apply font-[400] text-[2rem] p-0 leading-none tracking-[0.3rem];
+  }
+
+  .menu__summary__card .food-name h1 {
+    @apply text-[3rem] font-[450];
+  }
+
+
+  .menu__summary__card p {
+    @apply text-[0.8rem] tracking-[0.2rem] pr-2 text-gray-400;
+  }
+
+  .menu__summary__card a {
+    @apply inline-flex items-center justify-center
+           text-[2rem]
+           text-white
+           text-center
+           pb-8
+           w-13 h-13
+           transition-all duration-1000
+           bg-primary rounded-full;
+  }
+
+  .menu__summary__card a:hover {
+    @apply scale-105 rotate-[360deg];
+  }
+
+  .menu__summary__card img {
+    @apply block w-full p-8;
+  }
+  .menu__tabs ul {
+    @apply flex gap-17;
+  }
+
+  .tab__nav__link {
+    @apply flex flex-col items-center justify-center gap-1 px-1 text-sm;
+  }
+
+  .tab__nav__link img {
+    @apply w-12 h-12 object-contain;
+  }
+
+  .tab__nav__link span {
+    @apply text-2xl font-medium;
+  }
+  .tab__nav__link:hover span {
+    @apply text-primary;
+  }
+
+  .tab__nav__link.active {
+    @apply border-black;
+  }
+
+  .tab__nav__link.active span {
+    @apply text-primary;
+  }
+
+  .menu__content {
+    @apply block;
+  }
+
+  .menu__content__item {
+    @apply hidden
+           absolute
+           flex-col
+           gap-12
+           w-0
+           scale-0
+           bg-white
+           transition-all
+           duration-500;
+  }
+
+.menu__content__item.active {
+  @apply grid
+         static
+         w-full
+         scale-100
+         overflow-hidden
+         place-items-center
+         gap-12
+         px-4
+         py-8
+         md:px-20;
+}
+
+  /* .menu__item {
+    @apply bg-white
+           border border-black/30
+           rounded
+           h-[30rem]
+           flex flex-col
+           p-[5rem_4rem_0_4rem]
+           transition-all
+           duration-500
+           ease-in-out
+           scale-100
+           opacity-25
+           rotate-y-[90deg];
+  } */
+
+  .menu__item {
+  @apply mx-auto 
+  border border-black/30 
+  opacity-25
+  p-8 md:p-[5rem_4rem_2rem_4rem]
+  h-[35rem];
+}
+
+  .menu__content__item.active .menu__item {
+    @apply scale-100 opacity-100 rotate-y-0
+           transition-all duration-500 delay-500;
+  }
+
+  .menu__item .img-food {
+    @apply inline-block text-center;
+  }
+
+  .menu__item .img-food img {
+    @apply w-[20rem] pb-3;
+  }
+
+  .menu__item .name-food {
+    @apply inline-block p-0 transition-all;
+  }
+
+  .menu__item .name-food h4 {
+    @apply text-[1.5rem] font-[400] tracking-[0.1rem] pt-11;
+  }
+
+  .menu__item .name-food:hover {
+    @apply text-primary;
+  }
+
+
+  .menu__item__text {
+    @apply flex flex-col gap-4 relative bottom-20;
+  }
+
+  .menu__item__text h3 {
+    @apply text-[1.9rem] font-[400] text-primary tracking-[0.1rem];
+  }
+
+  .menu__item__text a.btn {
+    @apply w-[5] h-[10]
+           text-[0.9rem]
+           px-12 py-3
+           flex items-center gap-4
+           tracking-[0.1rem]
+           text-center
+           bg-primary
+           rounded-4xl text-white;
+           
+  }
+
+  .menu__item__text p {
+    @apply text-xs tracking-[0.1rem] text-gray-500;
+  }
+
+  .promos .container {
+  @apply py-4; 
+}
+
+.promos__wrapper {
+  @apply grid gap-4; 
+
+  /* Custom rows for desktop
+  grid-template-rows: 50vh 100vh 100vh; */
+
+  .offer {
+    @apply w-full flex flex-col justify-center text-center bg-cover;
+
+    h3, h2, h1, p {
+      @apply font-[400] leading-none; 
+    }
+
+    h2 {
+      @apply text-[1.8rem] tracking-[0.5rem];
+    }
+
+    h1 {
+      @apply text-[3.5rem] my-2; 
+    }
+
+    p {
+      @apply text-gray-500 font-sans mt-10 tracking-[0.1rem]; 
+    }
+
+    /* Background images for each child */
+    &:first-child {
+      @apply w-full h-[50vh] md:h-[550px] bg-cover bg-center bg-[url('/img/offers1.png')];;
+    }
+
+    &:nth-child(2) {
+      @apply w-full h-[80vh] md:h-[550px] bg-cover bg-center bg-[url('/img/offers2.png')];
+
+      .text {
+        @apply relative top-[15vh];
+      }
+
+      .inner__text {
+        @apply relative bottom-10 flex flex-col gap-4;
+      }
+    }
+
+    &:last-child {
+      @apply w-full h-[95vh] md:h-[550px] bg-cover bg-center bg-[url('/img/offers3.png')];
+
+      .text {
+        @apply relative bottom-[15vh];
+      }
+
+      h2 {
+        @apply relative bottom-8 left-8 text-[1.5];
+      }
+    }
+  }
+}
+
+.menu {
+  @apply pt-4;
+
+  .container {
+    @apply mx-auto px-4;
+  }
+
+  &__wrapper {
+    @apply flex flex-col space-y-8;
+  }
+
+
+  &__tabs {
+    @apply flex justify-center gap-4;
+
+    ul {
+      @apply flex justify-center gap-4 p-2;
+    }
+
+    .tab__nav__link {
+      @apply flex flex-col items-center border-b-2 border-transparent pb-2 text-lg font-medium cursor-pointer;
+
+      &.active {
+        @apply border-primary;
+      }
+
+      img {
+        @apply w-20 mx-auto -mt-4;
+      }
+
+      span {
+        @apply mt-2;
+      }
+
+      &:hover span {
+        @apply text-primary;
+      }
+    }
+  }
+
+
+  &__content {
+    @apply flex flex-col space-y-6;
+
+    &__item {
+      @apply flex flex-col space-y-6;
+
+      &.hidden {
+        @apply hidden;
+      }
+
+      &.active {
+        @apply flex flex-col space-y-6;
+      }
+
+      .menu__item {
+        @apply flex flex-col items-center bg-white rounded-lg p-4 shadow-md;
+
+        .img-food img {
+          @apply w-48 -mt-4;
+        }
+
+        &__text {
+          @apply text-center mt-4 flex flex-col gap-2;
+
+          .name-food h4 {
+            @apply text-xl font-medium;
+          }
+
+          h3 {
+            @apply text-lg font-semibold text-primary mt-1;
+          }
+
+          p {
+            @apply text-gray-500 text-sm mt-2;
+          }
+
+          .btn {
+            @apply inline-flex items-center justify-center mt-4 px-6 py-2 bg-primary text-white rounded hover:scale-105 transition-transform;
+          }
+        }
+      }
+    }
+  }
+}
+.order {
+  @apply py-8;
+}
+
+.order .container {
+   @apply p-6 md:p-0;
+}
+
+.order__wrapper {
+  @apply flex flex-col
+         gap-8
+         justify-center
+         md:grid
+         md:grid-cols-3
+         md:gap-0
+         md:relative;
+}
+
+
+.order__wrapper .curly-line {
+  @apply hidden md:block absolute;
+}
+
+.order__wrapper .curly-line:first-of-type {
+  @apply md:translate-x-[30rem] md:translate-y-[8rem];
+}
+
+.order__wrapper .curly-line:last-of-type {
+  @apply md:translate-x-[84rem] md:translate-y-[3.5rem];
+}
+
+
+.order__step__card {
+  @apply 
+         flex
+         flex-col
+         justify-center
+         text-center
+         bg-lightgrey;
+}
+
+.order__step__card .choose__img {
+  @apply block
+         mx-auto
+         pt-16
+         w-full
+         md:max-w-[35rem];
+}
+
+
+.order__step__card .info {
+  @apply p-12
+         flex
+         flex-col
+         gap-4;
+}
+
+.order__step__card .title__tab {
+  @apply flex
+         flex-col
+         gap-4
+         items-center
+         md:flex-row-reverse
+         md:justify-start
+         md:gap-8;
+}
+
+.order__step__card .title__tab img {
+  @apply mx-auto
+         object-contain
+         max-w-[7rem]
+         p-0
+         md:mx-0;
+}
+
+.order__step__card .title__tab h2 {
+  @apply text-[2.5rem]
+         font-[400]
+         tracking-[0.3rem]
+         leading-none;
+}
+
+
+.order__step__card p {
+  @apply tracking-[0.1rem]
+         text-[var(--clr-mid)]
+         text-gray-400;
+}
+
+
+.order__step__card:last-of-type .choose__img {
+  @apply p-0;
+}
+
+
+@media (min-width: 768px) {
+  .order__step__card {
+    @apply justify-start;
+  }
+
+  .order__step__card:first-child .choose__img {
+    @apply pl-8;
+  }
+
+  .order__step__card:first-child .info {
+    @apply pt-16 pb-16 pl-32 pr-0;
+  }
+
+  .order__step__card:nth-child(2) {
+    @apply flex-col-reverse justify-center pl-24;
+  }
+
+  .order__step__card:nth-child(2) .info {
+    @apply py-16 px-0;
+  }
+
+  .order__step__card:nth-child(3) {
+    @apply items-end;
+  }
+
+  .order__step__card:nth-child(3) .info {
+    @apply pl-[6.5rem] pt-0;
+  }
+}
+a{
+  @apply rounded-b-full;
+}
+
+}
+
+
+
