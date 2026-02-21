@@ -1,777 +1,330 @@
-@import "tailwindcss";
-@import url("https://fonts.googleapis.com");
-
-@theme {
-  --color-primary: #ffa700;
-  --color-black: #000000;
-  --color-white: #ffffff;
-  --color-lightgrey: #F7F6F9;
-  --color-lightblack:#2b2b2b;
-  --font-display: "Oswald", sans-serif;
-}
-
-.font-display {
-  font-family: var(--font-display);
-}
-  .header {
-    @apply fixed top-0 left-0 w-full
-           px-6 py-2
-           bg-white
-           z-999
-           shadow-(--shadow-soft) md:sticky
-          md:-top-[7rem]
-          md:left-0;
-  }
-
-  .header__wrapper {
-    @apply flex items-center justify-between w-full md:flex
-          md:flex-col
-          md:gap-12
-          md:items-center 
-          md:justify-center 
-          w-full;
-  }
-  
-  .branding{
-  @apply md:flex
-  md:items-center
-  md:justify-between
-  md:w-full;
-}
-
-.branding h3{
-  @apply hidden md:block;
-}
+    @import "tailwindcss";
+    @import url("https://fonts.googleapis.com");
 
 
-  .header__nav {
-    @apply absolute
-           top-28
-           -right-full
-           w-full
-           h-[calc(110vh-103px)]
-           bg-lightblack
-           transition-all
-           duration-300
-           ease-[var(--ease-qck)]
-           md:sticky
-           md:top-40
-           md:h-fit
-           md:bg-white;
-  }
-
-  .header__nav.open {
-    @apply right-0 bg-lightblack h-920;
-    
-  }
-
-  .header__nav ul {
-    @apply flex flex-col
-           gap-8
-           pt-30
-           text-center
-           font-display
-           md:pt-0
-           md:flex
-           md:flex-row
-           md:justify-center;
-  }
-
-  .header__nav ul li a {
-    @apply text-[0.9rem]
-           text-white
-           tracking-wide
-           transition-colors
-           duration-200 md:text-black;
-  }
-.header__nav ul li a .arrows{
-  @apply md:block md:flex md:flex-col 
-  md:items-center md:justify-center md:opacity-80;
-
-}
-  .header__nav ul li a i{
-  @apply md:block
-  md:text-black;
-}
-    .header__nav ul li .home__menu .container {
-    @apply shadow-md
-        p-8 bg-white;
+    @theme {
+        --color-primary: #ffc139;
+        --color-dark: #2b2b2b;
+        --color-primary: #ffa700;
+        --color-dark: #2b2b2b;
+        --color-light: #ffffff;
+        --color-mid:#00000067;
+        --color-midlight:#F7F6F9;
+         --font-display: "Oswald", sans-serif;
     }
-.header__nav ul li a:first-child{
-  @apply md:flex
-  md:content-center
-  md:gap-2
-  md:relative;
-}
-.header__nav ul li a:first-child.active{
-  @apply md:text-primary;
-}
+    .container {
+        @apply lg:max-w-332 lg:mx-auto;
+    }
+    .header__nav {
+        @apply -right-full transition-all ease-in-out duration-500 bg-dark absolute text-white w-full h-screen top-23.5
+        md:right-0 md:relative md:bg-white md:text-black md:h-max md:top-0 md:max-w-full;
+    }
+    .header__nav.open {
+        @apply right-0;
+    }
+    .header__nav ul li {
+        @apply md:flex md:items-center;
+    }
+    .header__nav ul li:nth-child(2) {
+        @apply lg:hidden;
+    }
+    .header__nav ul li a {
+        @apply md:font-light md:text-sm md:tracking-[2px]
+                lg:font-normal lg:text-[0.8rem] lg:tracking-[1px];
+    }
+    .header__nav ul li a:hover {
+        @apply lg:text-primary;
+    }
+    .header__wrapper .branding h3 {
+        @apply hidden items-center gap-6 text-sm font-[350] font-["Oswald"] 
+                md:flex
+                lg:font-medium lg:text-xl lg:tracking-[1px];
+    }
+    .header__wrapper .branding h3 i {
+        @apply text-primary text-2xl;
+    }
+    .header__wrapper .branding h3:first-child:hover {
+        @apply lg:text-primary lg:cursor-pointer;
+    }
 
-.header__nav ul li a:first-child.active i{
-  @apply md:text-primary;
-}
+    .burgir {
+        @apply 
+        md:hidden;
+        span {
+            @apply w-6 h-[0.2rem] bg-white block;
+        }
+    }
+    .burgir.open{
+        @apply bg-transparent;
+        span {
+            @apply bg-black w-4.5;
+        }
+        span:first-child {
+            @apply rotate-225 translate-y-2.5;
+        }
+        span:nth-child(2) {
+            @apply opacity-0;
+        }
+        span:last-child {
+            @apply -rotate-225 -translate-y-2.25;
+        } 
+    }
 
+    .banner .banner__text a:hover {
+        @apply lg:text-primary lg:bg-white;
+    }
 
-.burgir {
-  @apply relative
-         w-12 h-12
-         flex items-center justify-center
-         bg-primary
-         rounded-xl
-         cursor-pointer
-         transition-all
-         duration-200
-         ease-[var(--ease-simple)];
-           
-}
-.burgir{
-  @apply md:hidden;
-}
+    .menu__summary__card {
+        @apply flex flex-col items-center py-10 justify-center max-w-[95%] mx-auto
+                md:items-start md:justify-start
+                lg:max-w-full;
+    }
+    .menu__summary__card img {    
+        @apply w-90
+        md:w-50
+        lg:w-full;
+    }
+    .menu__summary__card p {
+        @apply text-sm font-[Montserrat] font-light tracking-[1.5px] text-[#333333] leading-7 
+        md:max-w-120 md:mx-auto md:text-sm
+        lg:tracking-[1px] lg:font-[350];
+    }
+    .menu__summary__card:nth-child(2) img {
+        @apply md:w-40 lg:w-75;
+    }
+    .menu__summary__card .card__text {
+        @apply flex flex-col gap-4  
+        md:max-w-160 md:gap-6
+        lg:max-w-full lg:gap-4;                
+    }
+    .menu__summary__card .card__text .price {
+        @apply flex items-end mb-2;
+    }
+    .menu__summary__card .card__text .price h3 {
+        @apply font-[380] tracking-[2px]
+        md:text-xl md:tracking-[3px]
+        lg:text-lg lg:tracking-[2px];
+    }
+    .menu__summary__card .card__text .price h1 {
+        @apply text-[2.5rem] ml-1.5 translate-y-2
+                lg:text-[2.25rem] lg:translate-y-1.5;
+    }
+    .menu__summary__card .card__text .price .yellow, .menu__summary__card .card__text .price h1 {
+        @apply text-primary font-normal
+        md:tracking-[3px];
+    }
+    .menu__summary__card .card__text .price .yellow {
+        @apply md:text-xl;
+    }
+    .menu__summary__card .card__text a {
+        @apply flex w-11 h-11 items-center justify-center text-white text-2xl rounded-full bg-primary ;
+    }
+    .menu__summary__card .card__text a:hover {
+        @apply lg:bg-black lg:text-primary;
+    }
+    .menu__summary__card .card__text .food-name {
+        @apply flex gap-1
+        md:flex-col md:justify-items-start
+        lg:gap-2;
+    }
+    .menu__summary__card .card__text .food-name h2, .menu__summary__card .card__text .food-name h1 {
+        @apply text-[2rem] font-[375] tracking-[0.25rem] p-0 leading-none
+        md:max-w-54 md:leading-8
+        lg:max-w-full lg:text-[2.2rem];
+    }
+    .menu__summary__card .card__text .food-name h1 {
+        @apply text-[3rem] 
+        md:tracking-[4px] md:leading-16
+        lg:text-[4.2rem];
+    }
+    .menu__summary__card:nth-child(odd) {
+        @apply md:flex-col-reverse;
+    }
+    .menu__summary__card:nth-child(2) .card__text .food-name{
+        @apply lg:flex-row lg:gap-1.5;
+    }
+    .menu__summary__card:nth-child(2) .card__text, .menu__summary__card:last-child .card__text {
+        @apply lg:pl-12;
+    }
 
-  .burgir span {
-  @apply absolute
-         w-8
-         h-[3px]
-         bg-white
-         rounded-full
-         transition-all
-         duration-200;
-}
+    .promos {
+        .container {
+            @apply py-4;
+        }
+        .offer {
+            @apply flex flex-col text-center;
+            h1, h2, h3, p{
+                @apply font-normal leading-none;
+            }
+            h3 {
+                @apply text-[1.15rem];
+            }
+            h2 {
+                @apply tracking-[0.3rem]
+                md:tracking-[0.4rem];
+            }
+            h1 {
+                @apply text-[3.5rem] my-2
+                md:text-[4.25rem] md:my-3;
+            }
+            p {
+                @apply text-[#00000067] font-[Segoe_UI] mt-6 tracking-[0.5px];
+            }
+        }    
+    }
 
-.burgir span:nth-child(1) {
-  @apply -translate-y-2;  
-}
-
-.burgir span:nth-child(3) {
-  @apply translate-y-2;  
-}
-
-
-  .burgir.open {
-  @apply bg-transparent; 
-}
-
-.burgir.open span {
-  @apply bg-black;  
-}
-
-.burgir.open span:nth-child(1) {
-  @apply translate-y-0 rotate-45;  
-}
-
-.burgir.open span:nth-child(2) {
-  @apply opacity-0; 
-}
-
-.burgir.open span:nth-child(3) {
-  @apply translate-y-0 -rotate-45;  
-}
-
-  .banner {
-  @apply p-0 pt-25 md:pt-0;
-}
-
-
-.banner .container {
-  background-image: url("../img/banner.webp");
-  @apply h-[500px] bg-cover bg-no-repeat bg-center
-         flex items-center p-4   md:p-10 md:h-full;
-}
-
-.banner .banner__wrapper img {
-  @apply w-[18rem] pt-4  md:w-[26rem] lg:w-[20rem] ml-20;
-
-}
-
-
-.banner__text {
-  @apply flex flex-col w-fit max-w-[30rem]
-         text-white p-0 md:translate-x-32 md:-translate-y-28 md:max-w-[30rem];
-}
-
-
-.banner__text h2 {
-  @apply text-[3rem] tracking-[0.5rem] font-[600];
-}
-
-
-.banner__text p {
-  @apply text-[1.1rem] leading-normal pr-19;
-}
-
-
-.banner__text a.btn.bg-primary {
-  @apply w-[12rem]
-         mt-5
-         px-6
-         py-3
-         text-sm
-         tracking-[0.2rem]
-         text-white
-         text-center
-         inline-block
-         rounded-full
-         transition
-         hover:bg-white
-         hover:text-primary;
-  background-color: var(--color-primary);
-}
-
-
-.menu .container {
-    @apply p-0;
-  }
-
-.menu__summary__wrapper {
-  @apply md:grid md:grid-cols-[1fr_1fr_1fr] md:gap-20;
-}
-
-  .menu__summary__card {
-    @apply flex flex-col justify-start py-10;
-  }
-  .menu__summary__card:nth-child(odd) {
-  @apply md:flex-col-reverse;
-}
-
-
-  .menu__summary__card .card__text {
-    @apply flex flex-col gap-12;
-  }
-
-  .menu__summary__card .price {
-    @apply flex flex-row items-end;
-  }
-
-  .menu__summary__card .price h3 {
-    @apply font-[380] tracking-[0.2rem];
-  }
-
-  .menu__summary__card .price .yellow,
-  .menu__summary__card .price h1 {
-    @apply text-primary font-[400];
-  }
-
-  .menu__summary__card .price h1 {
-    @apply text-[3rem] ml-[0.6rem] translate-y-[0.7rem];
-  }
-
-  .menu__summary__card .price .yellow{
-     @apply text-[1.3rem];
-  }
-
-  .menu__summary__card .food-name {
-    @apply flex flex-col gap-[3px];
-  }
-
-  .menu__summary__card .food-name h2,
-  .menu__summary__card .food-name h1 {
-    @apply font-[400] text-[2rem] p-0 leading-none tracking-[0.3rem];
-  }
-
-  .menu__summary__card .food-name h1 {
-    @apply text-[3rem] font-[450];
-  }
-
-  .menu__summary__card p {
-    @apply text-[0.9rem] tracking-[0.2rem] pr-2 text-gray-400;
-  }
-
-  .menu__summary__card .btn.bg-primary.menu{
-    @apply w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center text-2xl leading-none  pt-[2px] font-bold;
-  }
-  
-  .btn.add-to-cart.menu {
-  @apply inline-flex
-         items-center
-         justify-center
-         w-[14rem]
-         px-6
-         py-2 ;
+    .menu__content {
+    @apply py-4 md:max-w-[95%] md:mx-auto lg:max-w-full;
 }
 
-  .menu__summary__card img {
-    @apply block w-full p-8 md:p-0;
-  }
-  .menu__tabs ul {
-    @apply flex gap-20;
-  }
-
-  .tab__nav__link {
-    @apply flex flex-col items-center justify-center gap-3 px-1 text-sm;
-  }
-
-  .tab__nav__link img {
-    @apply w-19 h-19;
-  }
-
-  .tab__nav__link span {
-    @apply text-[1.6rem] font-normal;
-  }
-  .tab__nav__link:hover span {
-    @apply text-primary;
-  }
-
-  .tab__nav__link.active {
-    @apply border-black;
-  }
-
-  .tab__nav__link.active span {
-    @apply text-primary;
-  }
-
-  .menu__content {
-    @apply block;
-  }
-
-  .menu__content__item {
-    @apply hidden
-           absolute
-           flex-col
-           gap-12
-           w-0
-           scale-0
-           bg-white
-           transition-all
-           duration-500 md:flex md:flex-row;
-  }
+.menu__content__item {
+    @apply flex-col items-center gap-8 hidden
+           md:flex-row md:gap-4
+           lg:justify-items-start;
+}
 
 .menu__content__item.active {
-  @apply grid
-         static
-         w-full
-         scale-100
-         overflow-hidden
-         place-items-center
-         gap-12
-         px-4
-         py-8;
+    @apply flex;
 }
-
 
 .menu__item {
-    @apply mx-auto 
-    border border-black/30 
-    opacity-25
-    p-8;
+    @apply relative border-gray-200 border-2 max-w-4/5 flex flex-col items-center justify-center py-12 overflow-hidden
+           md:max-w-[45%] md:px-10 pb-40
+           lg:max-w-[25%] lg:pt-14 lg:pb-38 lg:px-15;
 }
 
-  .menu__content__item.active .menu__item {
-    @apply scale-100 opacity-100 rotate-y-0
-           transition-all duration-500 delay-500 
-           md:max-w-[35rem] md:min-w-[35rem] md:h-[45rem];
-  }
-
-  .menu__item .img-food {
-    @apply inline-block text-center  md:opacity-100;
-  }
-
-  .menu__item .img-food img {
-    @apply w-[20rem] pb-3;
-  }
-
-  .menu__item .name-food {
-    @apply inline-block p-0 transition-all;
-  }
-
-  .menu__item .name-food h4 {
-    @apply text-[1.5rem] font-[400] tracking-[0.1rem] pt-11;
-  }
-
-  .menu__item .name-food:hover {
-    @apply md:opacity-30 md:transition-all;
-  }
-
-
-  .menu__item__text {
-    @apply flex flex-col gap-4 relative bottom-20 md:top-20 md:max-w-[25rem] md:translate-y-0 
-    md:min-h-[18rem] md:max-h-[20rem] md:gap-4 md:transition-all md:delay-100;
-  }
-
-  .menu__item__text h3 {
-    @apply text-[1.9rem] font-[400] text-primary tracking-[0.1rem];
-  }
-
-  .menu__item__text a.btn {
-    @apply w-[5] h-[10]
-           text-[0.9rem]
-           px-12 py-3
-           flex items-center gap-4
-           tracking-[0.1rem]
-           text-center
-           bg-primary
-           rounded-4xl text-white;
-           
-  }
-
-  .menu__item__text p {
-    @apply text-xs tracking-[0.1rem] text-gray-500 
-    md:opacity-0 md:relative md:top-[30rem] md:transition-all md:delay-100;
-  }
-
-  .menu__content__item.active .menu__item__text:hover {
-  @apply md:translate-y-[-8rem] md:transition-all;
-}
-.menu__content__item.active .menu__item__text .add-to-cart:hover {
-  @apply md:opacity-100 md:top-0 md:transition-all;
-}
-.menu__content__item.active .menu__item__text p:hover {
-  @apply md:opacity-100 md:top-0 md:transition-all md:delay-[-100ms];
-}
-
-  .promos .container {
-  @apply py-4; 
-}
-
-.promos__wrapper {
-  @apply grid gap-4  
-  md:grid md:grid-cols-[1fr_2fr_1fr] md:gap-5;
-}
-
-.promos__wrapper .offer {
-  @apply w-full flex flex-col justify-center text-center bg-cover md:h-[550px];
-}
-
-.promos__wrapper .offer h1
-.promos__wrapper .offer h2,
-.promos__wrapper .offer h3,
-.promos__wrapper .offer p {
-  @apply font-[400] leading-none;
-}
-
-.promos__wrapper .offer h2 {
-  @apply text-[1.8rem] tracking-[0.5rem];
-}
-
-.promos__wrapper .offer h1 {
-  @apply text-[3.5rem] my-2;
-}
-
-.promos__wrapper .offer p {
-  @apply text-gray-500 font-sans mt-10 tracking-[0.1rem];
-}
-.promos__wrapper .offer:nth-child(2) .text {
-  @apply md:mt-60;
-}
-.promos__wrapper .offer:nth-child(2) img {
-  @apply md:translate-y-10;
-}
-.promos__wrapper .offer:nth-child(3) img {
-  @apply md:-translate-y-6;
-}
-
-
-.promos__wrapper .offer:nth-child(2) {
-  @apply md:col-start-1 md:order-1;
-  background-image: url("/img/offers2.png");
-}
-
-.promos__wrapper .offer:first-child {
-  @apply md:col-start-2 md:order-2;
-  background-image: url("/img/offers1.png");
-}
-
-.promos__wrapper .offer:last-child {
-  @apply md:order-3;
-  background-image: url("/img/offers3.png");
-}
-
-/* Second child text positioning */
-.promos__wrapper .offer:nth-child(2) .inner_text {
-  @apply relative md:top-[28vh];
-}
-
-.promos__wrapper .offer:nth-child(2) .inner__text {
-  @apply relative md:-bottom-12 flex flex-col gap-4;
-}
-
-.promos__wrapper .offer:last-child .text {
-  @apply md:-translate-y-24;
-}
-
-
-.promos__wrapper .offer:last-child h2 {
-  @apply relative  md:left-8 text-[2rem] items-center;
-}
-
-
-
-.menu{
-  @apply pt-4;
-}
-
-.menu .container{
-  @apply mx-auto px-4;
-}
-
-.menu__wrapper{
-  @apply flex flex-col space-y-8;
-}
-
-/* ================= TABS ================= */
-
-.menu__tabs{
-  @apply flex justify-center gap-4;
-}
-
-.menu__tabs ul{
-  @apply flex justify-center gap-4 p-2;
-}
-
-.menu__tabs .tab__nav__link{
-  @apply flex flex-col items-center border-b-2 border-transparent pb-2 text-lg font-medium cursor-pointer;
-}
-
-.menu__tabs .tab__nav__link.active{
-  @apply border-primary;
-}
-
-.menu__tabs .tab__nav__link img{
-  @apply w-20 mx-auto -mt-4;
-}
-
-.menu__tabs .tab__nav__link span{
-  @apply mt-2;
-}
-
-.menu__tabs .tab__nav__link:hover span{
-  @apply text-primary;
-}
-
-.menu__content{
-  @apply flex flex-col space-y-6;
-}
-
-.menu__content__item{
-  @apply flex flex-col space-y-6;
-}
-
-.menu__content__item.hidden{
-  @apply hidden;
-}
-
-.menu__content__item.active{
-  @apply flex flex-col space-y-6;
-}
-
-
-
-.menu__item{
-  @apply flex flex-col items-center bg-white rounded-lg p-4;
-}
-
-.menu__item .img-food img{
-  @apply w-50 mt-5;
-}
-
-.menu__item__text{
-  @apply text-center mt-4 flex flex-col gap-2;
-}
-
-.menu__item__text .name-food h4{
-  @apply text-xl font-medium;
-}
-
-.menu__item__text h3{
-  @apply text-lg font-semibold text-primary mt-1;
-}
-
-.menu__item__text p{
-  @apply text-gray-500 text-sm mt-2;
-}
-
-.menu__item__text .btn{
-  @apply inline-flex items-center justify-center mt-4 px-6 py-2 bg-primary text-white rounded hover:scale-105 transition-transform;
-}
-.order {
-  @apply py-8;
-}
-
-.order .container {
-  @apply px-6 md:px-0;
-}
-
-.order__wrapper {
-  @apply flex flex-col justify-center;
-
-
-  @apply md:grid md:grid-cols-3;
-}
-.order__step__card {
-  @apply flex flex-col justify-center items-center text-center bg-lightgrey rounded-lg p-6 md:p-8;
-}
-
-
-.order__step__card .choose__img {
-  @apply w-40 h-40 object-contain mx-auto md:w-70 md:h-70;
-}
-
-/* Info text */
-.order__step__card .info {
-  @apply flex flex-col gap-4 text-center md:text-left;
-}
-
-.order__step__card .title__tab {
-  @apply flex flex-col items-center gap-2 md:flex-row md:items-center md:gap-4;
-}
-
-.order__step__card .title__tab img {
-  @apply w-10 h-10 md:w-12 md:h-12;
-}
-
-.order__step__card .title__tab h2 {
-  @apply text-xl md:text-[2.5rem];
-}
-
-.order__step__card p {
-  @apply text-gray-400 text-sm md:text-base;
-}
-
-/* Optional: curly lines hidden on mobile, positioned on md */
-.curly-line {
-  @apply hidden md:hidden;
-}
-
-.btn bg-primary scroll active{
-    @apply 
-    fixed left-20 
-    flex items-center 
-    justify-center;
-  } 
-.scroll {
-  @apply fixed bottom-6 left-90 z-[999]
-         flex items-center justify-center
-         w-13 h-13 rounded-full shadow-lg p-0 text-white text-[1.5rem] lg:left-300;
-}
-
-//to hide the scroll up
-.scroll.hidden {
-  @apply opacity-0 pointer-events-none;
-}
-
-.home_menu{
-  @apply hidden
-  md:block
-  md:origin-top
-  md:scale-0
-  md:transition-[transform]
-  md:duration-400
-  md:ease-[cubic-bezier(0.165,0.84,0.44,1)]
-  md:w-full
-  md:absolute
-  md:right-0
-  md:top-120;
-}
-
-.home__menu.active{
-  @apply md:scale-100;
-}
-.home__menu__btn i{
-  @apply hidden;
-}
-.home__menu__wrapper{
-  @apply md:flex
-  md:flex-col
-  md:gap-12;
-}
-.home__menu .items{
-  @apply md:grid
-  md:grid-cols-3
-  md:gap-12;
-}
-
-.home__menu .items img{
-  @apply transition-transform hover:scale-105 hover:shadow-md cursor-pointer;
-}
-
-.home__menu .items img:hover{
-  @apply md:scale-105
-  md:shadow-[0_4px_8px_-2px_#00000040]
-  md:cursor-pointer;
-}
-.home__menu .pop__promos{
-  @apply hidden md:relative
-  md:grid
-  md:grid-cols-2
-  md:gap-12;
-}
-.home__menu .pop__promos__item{
-  @apply md:p-4
-  md:bg-primary
-  md:flex
-  md:flex-row
-  md:justify-center
-  md:content-center
-  md:h-[13rem];
-}
-.home__menu .promo__text{
-  @apply md:content-center;
-}
-.home__menu .btn__container{
-  @apply md:flex
-  md:justify-center
-  md:flex-col;
-}
-.home__menu .pop__promos__item h1,
-.home__menu .pop__promos__item h3{
-  @apply md:leading-none
-  md:block
-  md:text-white;
-}
-.home__menu .pop__promos__item a{
-  @apply md:block
-  md:w-[21rem]
-  md:h-[5rem]
-  md:content-center
-  md:text-[1.4rem]
-  md:font-medium
-  md:tracking-[0.3rem]
-  md:text-white
-  md:transition-all
-  md:duration-200;
-}
-
-.home__menu .pop__promos__item a:hover{
-  @apply md:bg-white
-  md:text-primary;
-}
-.home__menu .pop__promos__item:first-child h1{
-  @apply md:text-[4.8rem]
-  md:font-[450]
-  md:tracking-[0.2rem];
-}
-
-.home__menu .pop__promos__item:first-child h3{
-  @apply md:text-[3rem]
-  md:font-[350]
-  md:tracking-[0.7rem];
-}
-
-.home__menu .pop__promos__item:first-child img{
-  @apply md:scale-125
-  md:animate-[spin_8s_linear_infinite];
-}
-
-.home__menu .pop__promos__item:first-child a{
-  @apply md:bg-black;
-}
-
-.home__menu .pop__promos__item:first-child a:hover{
-  @apply md:bg-white;
-}
-.home__menu .pop__promos__item:nth-child(2){
-  @apply md:bg-black
-  md:gap-6;
-}
-
-.home__menu .pop__promos__item:nth-child(2) h1{
-  @apply md:text-[4.8rem]
-  md:font-[450]
-  md:tracking-[0.8rem];
-}
-
-.home__menu .pop__promos__item:nth-child(2) h3{
-  @apply md:text-[3rem]
-  md:font-[400]
-  md:tracking-[1.1rem];
-}
-
+.menu__item a img {
+    @apply w-48;
+}
+
+.menu__item__text {
+    @apply max-w-4/5
+           lg:max-w-full lg:absolute lg:left-[50%] lg:translate-x-[-50%] lg:w-[80%] lg:-bottom-14
+           md:max-w-full md:absolute md:left-[50%] md:translate-x-[-50%] md:w-[80%] md:-bottom-14
+           transition-all duration-300;
+}
+
+.menu__item__text .name-food {
+    @apply text-lg;
+}
+
+.menu__item__text .name-food:hover {
+    @apply md:text-primary lg:text-primary;
+}
+
+.menu__item__text h3 {
+    @apply text-2xl text-primary my-2;
+}
+
+/* Description initially hidden on md and lg, slides in on hover */
+.menu__item__text p {
+    @apply text-sm font-light font-[Segoe_UI] text-gray-400 tracking-[0.5px]
+           md:translate-y-12 lg:translate-y-12
+           md:opacity-0 lg:opacity-0
+           transition-all duration-300;
+}
+
+.menu__item:hover .menu__item__text p {
+    @apply md:translate-y-0 lg:translate-y-0
+           md:opacity-100 lg:opacity-100;
+}
+
+/* Add-to-cart button also hidden initially and slides in */
+.menu__item__text .add-to-cart {
+    @apply flex gap-2 items-center max-w-max bg-primary text-white text-sm font-[Segoe_UI] px-8 py-2 rounded-full mt-2
+           md:mt-4 md:tracking-[2px] md:px-6 md:translate-y-12 md:opacity-0
+           lg:mt-4 lg:tracking-[2px] lg:px-6 lg:translate-y-12 lg:opacity-0
+           transition-all duration-300;
+}
+
+.menu__item:hover .menu__item__text .add-to-cart {
+    @apply md:translate-y-0 md:opacity-100
+           lg:translate-y-0 lg:opacity-100;
+}
+
+/* Hover image opacity */
+.menu__item:hover img {
+    @apply opacity-50;
+}
+
+/* Hover position of menu__item__text (slightly raise on hover) */
+.menu__item:hover .menu__item__text {
+    @apply md:bottom-6 lg:bottom-6;
+}
+
+
+    
+    .menu__tabs {
+        @apply block;
+    }
+    .menu__tabs ul li {
+        @apply flex flex-col items-center gap-1.5 border-b-2 border-gray-100 py-2 w-24;
+    }
+    .menu__tabs ul li img {
+        @apply w-12;
+    }
+    .menu__tabs ul li span {
+        @apply text-xl tracking-[2px];
+    }
+        .tab__nav__link:hover {
+            @apply text-primary cursor-pointer;
+        }
+        .tab__nav__link.active {
+            @apply border-b-primary text-primary;
+        }
+
+    .order .order__step__card {
+        @apply flex flex-col bg-[#f7f6f9] items-center justify-center text-center gap-6 py-9
+                md:text-start
+                lg:items-end lg:justify-start lg:py-0 lg:pb-9 lg:gap-0;
+    }
+    .order .order__step__card img {
+        @apply w-95;
+    }
+    .order .order__step__card:first-child {
+        @apply lg:gap-4;
+    }
+    .order .order__step__card:first-child > img {
+        @apply lg:pr-14 lg:w-105 lg:mt-8;
+    }
+    .order .order__step__card:first-child .info {
+        @apply lg:pl-24;
+    }
+    .order .order__step__card:nth-child(2) .info {
+        @apply lg:pl-22;
+    }
+    .order .order__step__card:nth-child(2) .title__tab {
+        @apply lg:gap-1;
+    }
+    .order .order__step__card:nth-child(3) .info {
+        @apply lg:pl-18;
+    }
+    .order .info {
+        @apply flex flex-col items-center justify-center tracking-[1px] gap-4
+                md:items-start md:px-3 md:gap-2;
+    }
+    .order .info .title__tab {
+        @apply flex flex-col justify-center items-center gap-2
+                md:flex-row-reverse md:items-start md:gap-4 md:justify-end
+                lg:items-center;
+    }
+    .order .info .title__tab img {
+        @apply w-16 md:w-12 lg:w-14;
+    }
+    .order .info .title__tab h2 {
+        @apply text-2xl font-["Oswald"] tracking-[3px] font-light 
+                md:max-w-30 md:text-[1.75rem] md:font-[350]
+                lg:max-w-full lg:font-normal lg:text-[2.2rem];
+    }
+    .order .info p {
+        @apply font-[Montserrat] text-black leading-7 tracking-[1.5px] font-extralight text-sm lg:tracking-[1px];
+    }
+    .order .order__step__card:last-child img {
+        @apply lg:w-90;
+    }
+    .order .order__step__card:nth-child(odd) {
+        @apply lg:mt-2;
+    }
+    .order .order__step__card:nth-child(even) {
+        @apply md:flex-col-reverse;
+    }

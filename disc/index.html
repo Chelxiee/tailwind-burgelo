@@ -8,152 +8,123 @@
       crossorigin="anonymous"
     ></script>
     <title>Burgelo</title>
-    <link rel="icon" type="image/x-icon" href="/dist/img/favicon.png" />
-    <link rel="stylesheet" href="/src/output.css">
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+    <link rel="icon" type="image/x-icon" href="/img/favicon.png" />
+    <link rel="stylesheet" href="../src/output.css">
+    <style>  @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
     </style>
   </head>
   <body>
-    <header class="header" id="header">
+    <header class="header bg-white fixed w-full top-0 left-0 p-4.5 z-9999 font-display" id="header">
       <div class="container">
-        <div class="header__wrapper">
-          <div class="branding">
-            <h3>123456789</h3>
-            <img src="/img/logo-df.svg" alt="">
-            <h3>kamote</h3>
-          </div>
-          <div class="burgir">
+        <div class="header__wrapper flex items-center justify-between 
+                    md:flex-col md:max-w-full">
+          <div class="font-display branding md:max-w-full md:flex md:flex-row md:justify-between md:items-center md:w-full
+                      lg:pb-4">
+            <h3 class="">123456789</h3>
+            <img class="w-38 md:w-50 lg:w-40 lg:translate-x-10" src="/img/logo-df.svg" alt="">
+            <h3>KAMOTE</h3>
+          </div>  
+          <div class="burgir bg-primary p-[0.6rem] rounded-lg flex flex-col justify-center gap-1.5 max-h-max cursor-pointer md:hidden">
             <span></span>
             <span></span>
             <span></span>
           </div>
 
           <div class="header__nav">
-            <ul>
-              <li><a href="/menu.html">MENU</a></li>
-              <li><a href="javascript:show__menu();" class="home__menu__btn">HOME<div class="arrows">
-                  <i class="fa-solid fa-angle-up arrow-up"></i>
-                  <i class="fa-solid fa-angle-down arrow-down"></i>
+            <ul class="flex flex-col items-center text-center h-full pt-32 gap-10 max-w-full
+                      md:flex-row md:justify-center md:pt-0 md:mt-10
+                      lg:gap-6">
+              <li class><a href="javascript:show__menu();" class="home__menu__btn">HOME
+                <div class="arrows hidden h-max md:inline">
+                  <i class="fa-solid fa-angle-down arrow-down text-xs"></i>
                 </div></a>
-              
-                <!-- <section class="home__menu">
-                  <div class="container home__menu__wrapper">
-                    <div class="items">
-                      <img src="/img/Frame-1.png" alt="">
-                      <img src="/img/Frame-2.png" alt="">
-                      <img src="/img/Frame-3.png" alt="">
-                      <img src="/img/Frame-4.png" alt="">
-                      <img src="/img/Frame-5.png" alt="">
-                      <img src="/img/Frame-6.png" alt="">
-                    </div>
-            
-                    <div class="pop__promos">
-                      <div class="pop__promos__item">
-                        <div class="promo__text">
-                          <h3>SPECIAL OFFER</h3>
-                          <h1>BUY 2 GET 3</h1>
-                        </div>
-                        <img src="./img/coffee.png" alt="">
-                        <div class="btn__container">
-                          <a href="javascript:void(0)" class="btn bg-primary">ORDER NOW</a>
-                        </div>
-                      </div>
-            
-                      <div class="pop__promos__item">
-                        <div class="promo__text">
-                          <h1>GET 25% OFF</h1>
-                          <h3>ON YOUR ORDER</h3>
-                        </div>
-                        <div class="btn__container">
-                          <a href="javascript:void(0)" class="btn bg-primary">ORDER NOW</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section> -->
 
+              <li><a href="./menu.html">MENU</a></li>
               </li>
               <li><a href="javascript:void(0);">ABOUT</a></li>
               <li><a href="javascript:void(0);">SERVICES</a></li>
               <li><a href="javascript:void(0);">UPDATES</a></li>
               <li><a href="javascript:void(0);">CONTACTS</a></li>
             </ul>
-
-            
-
-
           </div>
         </div>
       </div>
     </header>
 
-    <section class="banner" id="banner">
+    <section class="banner pt-23.5 text-white max-w-full md:pt-28 lg:pt-36" id="banner">
       <div class="container">
-        <div class="banner__wrapper">
-          <img src="/img/banner-food.svg" alt="">
-          <div class="banner__text">
-            <h2 class="font-display" >DELIVERY</h2>
-            <p>
+        <div class="banner__wrapper bg-[url(/img/banner.webp)] bg-cover bg-center bg-no-repeat max-w-[95%] mx-auto h-[70vh] pt-14 pl-2
+                    md:mx-auto md:bg-size-[80rem] md:pt-40 md:h-200 md:pl-12
+                    lg:max-w-full lg:bg-cover lg:h-175 lg:pt-28 lg:pl-34">          
+          <img class="w-72 md:w-80 lg:w-76" src="/img/banner-food.svg" alt="">
+          <div class="banner__text max-w-80 pl-2
+                      md:max-w-max md:translate-x-18 md:-translate-y-14 md:flex md:flex-col md:gap-4
+                      lg:translate-x-19">
+            <h2 class="text-5xl font-[450] tracking-[0.5rem]
+                      md:text-6xl md:tracking-[0.75rem]
+                      lg:text-[4rem] font-display">DELIVERY</h2>
+            <p class="mb-6 md:max-w-72">
               We’re proud to have our burger’s history being as long as 25 years!
             </p>
-            <a href="javascript:void(0);" class="btn bg-primary">ORDER NOW</a>
+            <a href="javascript:void(0);" class="btn bg--primary font-bold bg-primary px-8 py-3.5 rounded-full tracking-[4px] text-xs md:max-w-max">ORDER NOW</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="menu__summary">
+    <section class="menu__summary md:-mt-14 lg:mt-0">
       <div class="container">
-        <div class="menu__summary__wrapper">
+        <div class="menu__summary__wrapper md:grid md:grid-cols-3 max-w-[95%] mx-auto
+                    lg:max-w-full lg:gap-8">
 
           <!-- summary cards -->
           <div class="menu__summary__card">
             <img src="/img/burger.png" alt="">
             <div class="card__text">
               <div class="price">
-                <h3 class="font-display"; >From</h3>
-                <h1 class="font-display";>17</h1>
-                <h3 class="yellow">$</h3>
+                <h3 class="font-display">From</h3>
+                <h1 class="font-display">17</h1>
+                <h3 class="yellow font-display">$</h3>
               </div>
-              <div class="food-name">
-                <h2 class="font-display";>BEEF CLASSIC<h2>
-                <h1 class="font-display";>BURGERS</h1>
+              <div class="food-name flex-col md:max-w-50 lg:max-w-full">
+                <h2 class="font-display">BEEF CLASSIC<h2>
+                <h1 class="font-display">BURGERS</h1>
               </div>
               <p>Try this delicious burger containing of two fried parts of a whole-grain bun, a juicy piece of beef, cheese and lettuce.</p>
-              <a href="javascript:void(0)" class="btn bg-primary menu">+</a>
+              <a href="javascript:void(0)" class="btn bg--primary menu">+</a>
             </div>
           </div>
 
           <div class="menu__summary__card">
             <img src="/img/pasta.png" alt="">
             <div class="card__text">
-              <div class="price">
-                <h3 class="font-display";>From</h3>
-                <h1 class="font-display";>12</h1>
+              <div class="price font-display">
+                <h3>From</h3>
+                <h1>12.00</h1>
                 <h3 class="yellow">$</h3>
               </div>
-              <div class="food-name">
-                <h2 class="font-display";>THE BEST PASTA<h2>
+              <div class="food-name font-display">
+                <h2>THE BEST <h2>
+                <h2>PASTA</h2>
               </div>
               <p>Our pasta with seafood is mixed perfectly with a glass of white wine.</p>
-              <a href="javascript:void(0)" class="btn bg-primary menu">+</a>
+              <a href="javascript:void(0)" class="btn bg--primary menu">+</a>
             </div>
           </div>
 
           <div class="menu__summary__card">
             <img src="/img/soup1_01-300x300.webp" alt="">
             <div class="card__text">
-              <div class="price">
-                <h3 class="font-display";>From</h3>
-                <h1 class="font-display";>13.50</h1>
+              <div class="price font-display">
+                <h3>From</h3>
+                <h1>13.50</h1>
                 <h3 class="yellow">$</h3>
               </div>
-              <div class="food-name">
-                <h2 class="font-display";>SEASON SOUP<h2>
+              <div class="food-name font-display">
+                <h2>SEASON SOUP<h2>
               </div>
               <p>We offer you a special dish – our season soup containing season vegetables.</p>
-              <a href="javascript:void(0)" class="btn bg-primary menu">+</a>
+              <a href="javascript:void(0)" class="btn bg--primary menu">+</a>
             </div>
           </div>
           
@@ -163,51 +134,60 @@
 
     <section class="promos">
       <div class="container">
-        <div class="promos__wrapper">
+        <div class="promos__wrapper relative flex flex-col gap-2 max-w-[95%] mx-auto
+                    lg:flex-row lg:max-w-full">
 
-          <div class="offer" id="offer-1">
-            <div class="text">
-              <h2 class="font-display">SPECIAL OFFER</h2>
-              <h1 class="font-display">BUY 2 GET 3</h1>
-              <p  >Use Our Special Offer Quicker!</p>
+          <div class="offer bg-[url(/img/offers1.png)] bg-cover flex items-center justify-center h-150
+                      lg:absolute lg:top-[50%] lg:left-[50%] lg:translate-x-[-50%] lg:translate-y-[-50%] lg:w-[48.5%] lg:h-145" id="offer-1">
+            <div class="text font-display">
+              <h2 class="text-[2rem] md:text-[2.5rem]">SPECIAL OFFER</h2>
+              <h1>BUY 2 GET 3</h1>
+              <p>Use Our Special Offer Quicker!</p>
             </div>
           </div>
-          
-          <div class="offer" id="offer-2">
-            <div class="text">
-              <img src="/img/happy.png" alt="" class="mx-auto transform -translate-y-10" >
-              <div class="inner__text">
-                <h2 class="font-display">HOURS</h2>
-                <h3 class="font-display">Mon - Fri 1 P.M. - 3 P.M.</h3>
+
+          <div class="offer__wrapper grid grid-cols-1 gap-2
+                      md:grid-cols-2 lg:flex lg:justify-between lg:w-full">
+            <div class="offer bg-[url(/img/offers2.png)] relative bg-cover flex flex-col items-center h-screen
+                        md:h-165 lg:w-[23.5%] lg:h-145" id="offer-2">
+              <div class="text absolute bottom-45
+                          md:bottom-25
+                          lg:bottom-15">
+                <img class="w-44" src="/img/happy.png" alt="">
+                <div class="inner__text flex flex-col gap-2 font-display">
+                  <h2 class="text-[2.5rem]">HOURS</h2>
+                  <h3>Mon - Fri 1 P.M. - 3 P.M.</h3>
+                </div>
+              </div>
+            </div>
+            <div class="offer bg-[url(/img/offers3.png)] relative bg-cover bg-center flex flex-col items-center h-screen
+                        md:h-165 lg:w-[23.5%] lg:h-145 font-display" id="offer-3">
+              <div class="text relative top-44.5
+                          md:top-25
+                          lg:top-10">
+                <img class="w-60" src="/img/15-off.png" alt="">
+                <h2 class="text-[1.75rem]">FIRST ORDER</h2>
               </div>
             </div>
           </div>
-
-          <div class="offer" id="offer-2">
-            <div class="text">
-              <img src="/img/15-off.png" alt=""  class="mx-auto transform -translate-y-10">
-              <h2 class="font-display">FIRST ORDER</h2>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
 
-    <section class="menu">
-      <div class="container">
+    <section class="menu mb-4">
+      <div class="container p-0">
         <div class="menu__wrapper">
 
-          <div class="menu__tabs">
-            <ul>
-              <li id="tab-1" class="tab__nav__link active font-display"><img src="/img/sub-burger.png" alt=""><span>BURGERS</span></li>
-              <li id="tab-2" class="tab__nav__link font-display"><img src="/img/sub-pasta.png" alt=""><span>PASTA</span></li>
-              <li id="tab-3" class="tab__nav__link font-display"><img src="/img/sub-drinks.png" alt=""><span>DRINKS</span></li>
+          <div class="menu__tabs w-7/8 mx-auto my-6 font-display">
+            <ul class="flex justify-around md:max-w-[50vw] md:mx-auto">
+              <li id="tab-1" class="tab__nav__link active"><img src="/img/sub-burger.png" alt=""><span>BURGERS</span></li>
+              <li id="tab-2" class="tab__nav__link"><img src="/img/sub-pasta.png" alt=""><span>PASTA</span></li>
+              <li id="tab-3" class="tab__nav__link"><img src="/img/sub-drinks.png" alt=""><span>DRINKS</span></li>
             </ul>
           </div>
           
           <!-- content of tabs -->
-          <div class="menu__content">
+          <div class="menu__content relative">
 
             <!-- set for burgers -->
             <div id="tab-1-content" class="menu__content__item active">
@@ -217,7 +197,7 @@
                   <a href="javascript:void(0)" class="name-food font-display"><h4>BBQ Burger</h4></a>
                   <h3 class="font-display">$4.00 - $5.00</h3>
                   <p>Pork, jowl salami andouille porchetta shankle chuck brisket ham hock...</p>
-                  <a href="" class="btn bg-primary add-to-cart menu"><i class="fa-solid fa-wrench"></i>SELECT OPTIONS</a>
+                  <a href="" class="btn bg--primary add-to-cart menu"><i class="fa-solid fa-wrench"></i>SELECT OPTIONS</a>
                 </div>
               </div>
 
@@ -241,9 +221,14 @@
                 </div>
               </div>
             </div>
-
+            <div id="tab-1-content-nav" class="slider__nav__container active">
+                <div id="tab-1-slider-nav" class="tns-nav">
+                    <div class="tns-nav-buttons" data-nav="0" aria-controls="tns1"><span></span></div>
+                    <div class="tns-nav-buttons" data-nav="1" aria-controls="tns1"><span></span></div>
+                </div>
+            </div>
             <!-- set for pasta -->
-            <div id="tab-2-content" class="menu__content__item">
+            <div id="tab-2-content" class="menu__content__item md:ml-8 md:w-full">
               <div class="menu__item pasta" id="pasta-1">
                 <a href="javascript:void(0)" class="img-food"><img src="/img/pasta2_01-300x300.webp" alt=""></a>
                 <div class="menu__item__text">
@@ -297,7 +282,12 @@
                 </div>
               </div>
             </div>
-
+            <div id="tab-3-content-nav" class="slider__nav__container">
+              <div id="tab-3-slider-nav" class="tns-nav">
+                  <div class="tns-nav-buttons" data-nav="0" aria-controls="tns1"><span></span></div>
+                  <div class="tns-nav-buttons" data-nav="1" aria-controls="tns1"><span></span></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -305,14 +295,16 @@
 
     <section class="order">
       <div class="container">
-        <div class="order__wrapper">
+        <div class="order__wrapper relative grid grid-cols-1 place-content-center gap-4 max-w-[95%] mx-auto
+                    md:grid-cols-3 md:gap-0
+                    lg:max-w-full">
 
           <div class="order__step__card">
             <img src="/img/choose1.png" alt="" class="choose__img">
             <div class="info">
               <div class="title__tab">
                 <img src="/img/fav4.svg" alt="">
-                <h2 class="font-display">CHOOSE</h2>
+                <h2>CHOOSE</h2>
               </div>
               <p>Select food, which you want now the most and don’t forget about drinks</p>
             </div>
@@ -323,7 +315,7 @@
             <div class="info">
               <div class="title__tab">
                 <img src="/img/fav5.svg" alt="">
-                <h2 class="font-display">MAKE AN ORDER</h2>
+                <h2>MAKE AN ORDER</h2>
               </div>
               <p>Contact us and provide our agent with correct information about your order</p>
             </div>
@@ -334,24 +326,19 @@
             <div class="info">
               <div class="title__tab">
                 <img src="/img/fav6.svg" alt="">
-                <h2 class="font-display">RECEIVE</h2>
+                <h2>RECEIVE</h2>
               </div>
               <p>Get your order as quickly as possible and enjoy your meal</p>
             </div>
           </div>
-
-          <img src="/img/choose-vector2.png" alt="" class="curly-line">
-          <img src="/img/choose-vector.png" alt="" class="curly-line">
-
+          <img src="/img/choose-vector2.png" alt="" class="curly-line hidden absolute top-18 left-78 w-45 lg:block">
+          <img src="/img/choose-vector.png" alt="" class="curly-line hidden absolute top-14 right-78 w-38 lg:block">
         </div>
       </div>
 
     </section>
 
-    <a href="javascript:void(0)" class="btn bg--primary scroll active bg-primary">
-      <i class="fa-solid fa-angle-up"></i>
-    </a>
-
     <script src="/js/burgir.js"></script>
+
   </body>
 </html>
